@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_selector_holo_light"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:weightSum="1" >
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.75"
+        android:orientation="vertical"
+        android:paddingBottom="8dip"
+        android:paddingLeft="8dip"
+        android:paddingRight="4dip"
+        android:paddingTop="8dip" >
+
+        <TextView
+            android:id="@+id/tweetHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Tweet Heading"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/tweetContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dip"
+            android:text="This is tweet content,what to tweet now"
+            android:textColor="@color/lightGrey"
+            android:textSize="13sp"
+            android:typeface="serif" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.25"
+        android:orientation="vertical"
+        android:paddingBottom="8dip"
+        android:paddingRight="8dip"
+        android:paddingTop="8dip" >
+
+        <TextView
+            android:id="@+id/tweetTimeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dip"
+            android:singleLine="true"
+            android:text="2 hrs ago"
+            android:textColor="@color/red"
+            android:textSize="11sp"
+            android:typeface="sans" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="57dp"
+            android:layout_height="57dp"
+            android:layout_marginTop="8dip"
+            android:background="@drawable/ad_list_item_img_background"
+            android:src="@drawable/img_no_image" />
+    </LinearLayout>
+
+</LinearLayout>

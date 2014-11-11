@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.demo.widget.twitter"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" 
+        android:name="com.demo.widget.twitter.WidgetApplication">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.demo.widget.twitter.appwidget.config.ConfigActivity"
+            android:label="@string/configure"
+            android:theme="@style/Theme.Configstyle" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".connect.T4JTwitterLoginActivity"
+            android:label="@string/twitter_auth"
+            android:screenOrientation="portrait"
+            android:theme="@style/Carbon.Theme.Dark" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="twitterlogin"
+                    android:scheme="x-oauthflow-twitter" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.demo.widget.twitter.appwidget.controls.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service android:name="com.demo.widget.twitter.appwidget.controls.TwitterService" />
+
+        <receiver android:name="com.demo.widget.twitter.appwidget.controls.WidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="com.demo.widget.twitter.TWEET_WIDGET_UPDATE" />
+                <action android:name="com.demo.widget.twitter.ME_LIST_STATII" />
+                <action android:name="com.demo.widget.twitter.WIDGET_REFRESH" />
+                <action android:name="com.demo.widget.twitter.WIDGET_LIST_SETTING" />
+                <action android:name="com.demo.widget.twitter.WIDGET_VISIBILITY" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widgetinfo" />
+        </receiver>
+        <receiver android:name=".PhoneBootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

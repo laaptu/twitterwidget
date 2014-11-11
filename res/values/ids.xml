@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="configParentFrameLayout" type="id"/>
+    <item name="updateIntervalSpinner" type="id"/>
+    <item name="meListView" type="id"/>
+    <item name="progressBar" type="id"/>
+    <item name="tweetListSpinner" type="id"/>
+    <item name="applyBtn" type="id"/>
+
+</resources>

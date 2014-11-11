@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="black">#ff000000</color>
+    <color name="holoBlue">#6633b5e5</color>
+    <color name="lightGrey">#ffcccccc</color>
+    <color name="lightLightGrey">#fff6f6f6</color>
+    <color name="red">#ffff0000</color>
+    <color name="veryDarkGrey">#ff393939</color>
+
+    <drawable name="nyt_widget_refresh_button_pressed_bg">@color/holoBlue</drawable>
+    <drawable name="separator_drawable">@color/veryDarkGrey</drawable>
+
+
+    <color name="ad_list_item_title_text_color">#4F4F4F</color>
+    <color name="ad_list_item_desc_text_color">#7B7B7B</color>
+
+</resources>

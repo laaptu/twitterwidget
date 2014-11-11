@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/nyt_widget_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dip"
+        android:background="@drawable/nyt_widget_header_background" >
+
+        <ImageView
+            android:id="@+id/refreshImageView"
+            android:layout_width="32dip"
+            android:layout_height="32dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/nyt_widget_refresh_button" />
+
+        <ImageView
+            android:id="@+id/separator"
+            android:layout_width="1dip"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:layout_toLeftOf="@id/refreshImageView"
+            android:clickable="false"
+            android:src="@drawable/separator_drawable" />
+
+        <ImageView
+            android:id="@+id/settingImageView"
+            android:layout_width="32dip"
+            android:layout_height="32dip"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/separator"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/nyt_widget_settings_button" />
+
+        <TextView
+            android:id="@+id/headingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:gravity="center_vertical"
+            android:text="Tweets"
+            android:textColor="@color/lightGrey"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            android:singleLine="true"
+            android:ellipsize="end" 
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/settingImageView"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" 
+            android:id="@+id/listViewLayout">
+
+            <ListView
+                android:id="@+id/tweetListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/empty_string"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</LinearLayout>
